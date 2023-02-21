@@ -182,6 +182,7 @@ jobs:
           then
               echo -e "\nCONFIG_DEVEL=y\nCONFIG_CCACHE=y\n" >> $GITHUB_WORKSPACE/Configs/$CONFIG_FILE
           fi
+          cat $GITHUB_WORKSPACE/Configs/$CONFIG_FILE
           cp $GITHUB_WORKSPACE/Configs/$CONFIG_FILE .config
           source $GITHUB_WORKSPACE/Scripts/AutoBuild_DiyScript.sh
           source $GITHUB_WORKSPACE/Scripts/AutoBuild_Function.sh
