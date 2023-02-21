@@ -27,6 +27,7 @@ on:
         options:
           - 'x86_64'
           - 'x86_64-AP'
+          - 'x86_64-self'
       Tempoary_FLAG:
         description: '固件标签'
         default: 'AUTO'
