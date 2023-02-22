@@ -187,6 +187,10 @@ jobs:
           source $GITHUB_WORKSPACE/Scripts/AutoBuild_DiyScript.sh
           source $GITHUB_WORKSPACE/Scripts/AutoBuild_Function.sh
           make defconfig
+          echo >> feeds.conf.default
+          echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
+          ./scripts/feeds update istore
+          ./scripts/feeds install -d y -p istore luci-app-store
           Firmware_Diy_Before
           rm -f .config && cp $GITHUB_WORKSPACE/Configs/$CONFIG_FILE .config
           Firmware_Diy_Main
